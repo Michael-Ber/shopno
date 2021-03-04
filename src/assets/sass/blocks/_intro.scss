@@ -1,0 +1,56 @@
+.intro {
+    padding: $multiple * 16 0 $multiple * 33 0;
+    background-color: rgba(#eff0f2, .98);
+    &__header {
+        @include dFlexSpaceBetween();
+        margin-bottom: $multiple * 51;
+        &_logo {
+            @include montserrat();
+            padding: $multiple * 3;
+            box-shadow: 0px 0px 2px 0px rgba(21,21,22,0.75);
+            font-size: $multiple * 4;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $secondary-color;
+            border: $multiple * 2 solid #170f1c;
+            strong {
+                font-size: $multiple * 5;
+                color: #77efe5;
+            }
+        }
+        &_hamburger {
+            @include dFlexColumn();
+            cursor: pointer;
+            span {
+                width: $multiple * 8;
+                height: $multiple;
+                background-color: $secondary-color-op60;
+                border-radius: $multiple / 2;
+                &:not(:last-child) {
+                    margin-bottom: $multiple;
+                }
+            }
+        }
+    }
+    &__content {
+        margin-bottom: $multiple * 37;
+        &_title {
+            @include montserrat();
+            @include dFlexColumn();
+            line-height: $multiple * 17;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            color: #505050;
+        }
+    }
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-right: $multiple * 23;
+        &_button {
+            margin-right: $multiple * 71;
+        }
+    }
+}

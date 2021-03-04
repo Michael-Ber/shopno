@@ -1,0 +1,81 @@
+// @import './normalize.css';
+@import './components/mixins'; 
+@import './components/variables';
+@import './blocks/intro';
+@import './blocks/about';
+@import './blocks/works';
+@import './blocks/services';
+@import './blocks/team';
+@import './blocks/testimonials';
+@import './blocks/logo';
+@import './blocks/contacts';
+@import './blocks/footer';
+
+// == COMMON == //
+
+
+
+.container {
+    width: 1140px; 
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    @include montserrat();
+    display: inline-block;
+    padding: $multiple * 5 $multiple * 12;
+    border: $multiple/2 solid $secondary-color-op50;
+    border-radius: $multiple/2;
+    font-size: $multiple * 4;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $secondary-color;
+    cursor: pointer;
+    &:hover {
+        background-color: darken($main-color, 20%);
+    }
+}
+
+.word-rect {
+    @include montserrat();
+    padding: $multiple * 2;
+    background-color: rgba(#76f4ea, .5);
+}
+
+.main_title {
+    @include montserrat();
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $secondary-color-op90;
+    line-height: $multiple * 12;
+    text-align: center;
+}
+
+.main_subtitle {
+    @include merriweather();
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $secondary-color-op60;
+    text-align: center;
+    text-shadow: 0 0 $multiple $secondary-color-op50;
+}
+
+// == /COMMON == //

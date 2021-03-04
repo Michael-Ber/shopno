@@ -1,0 +1,30 @@
+@mixin raleway() {
+    font-family: 'Raleway', sans-serif;
+}
+
+@mixin montserrat() {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin merriweather() {
+    font-family: 'Merriweather', serif;
+}
+
+@mixin dFlexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin dFlexSpaceBetween() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin dFlexColumn() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
