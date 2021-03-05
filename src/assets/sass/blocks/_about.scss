@@ -1,4 +1,58 @@
 .about {
-    padding: $multiple * 32 0 $multiple * 28 0;
+    padding: $multiple * 32 $multiple * 9 $multiple * 28 $multiple * 9;
     background-color: #f8fafa;
+    &__subtitle {
+        margin-bottom: $multiple * 37;
+    }
+    &__content {
+        @include dFlexSpaceBetweenFlStart();
+        &_carousel {
+            width: 42%;
+            &_bg {
+                @include dFlexCenter();
+                width: 100%;
+                height: 412px;
+                background-color: #eff0f2;
+                margin: $multiple * 9 0 $multiple * 20;
+            }
+            &_frame {
+                width: 82%;
+                &_track {
+                    list-style-type: none;
+                }
+            }
+            &_dots {
+                @include dFlexCenter();
+                list-style-type: none;
+                &_dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    background-color: #d0d0d0;
+                    &:not(:last-child) {
+                        margin-right: $multiple;
+                    }
+                }
+            }
+        }
+        &_text {
+            width: 48%;
+            &_title {
+                @include merriweather();
+                font-weight: 700;
+                text-transform: uppercase;
+                color: $secondary-color-op74;
+                margin-bottom: 8 * $multiple;
+            }
+            &_paragraph {
+                @include raleway();
+                display: block;
+                font-size: 4 * $multiple;
+                line-height: 7 * $multiple;
+                font-weight: 400;
+                color: $secondary-color-op74;
+                margin-bottom: 9 * $multiple;
+            }
+        }
+    }
 }

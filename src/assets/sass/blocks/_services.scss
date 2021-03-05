@@ -1,0 +1,131 @@
+.services {
+    padding: 31 * $multiple 0;
+    background-color: #f9fbfb;
+    &__subtitle {
+        margin-bottom: 31 * $multiple;
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: 118.5 * $multiple 44.5 * $multiple 118.5 * $multiple ; 
+        grid-template-rows: repeat(3, autofill);
+        grid-template-areas: "bg sm bg"
+                             "bg sm bg"
+                             "bg sm bg";
+        grid-auto-rows: auto;
+        gap: 3 * $multiple 3 * $multiple;
+        &_item {
+            @include dFlexCenter();
+            position: relative;
+            overflow: hidden;
+            &:nth-child(1) {
+                grid-column: 1 / 3; 
+            }
+            &:nth-child(2) {
+                grid-column: 3 / 4; 
+            }
+            &:nth-child(3) {
+                grid-column: 1 / 3; 
+            }
+            &:nth-child(4) {
+                grid-column: 3 / 4; 
+            }
+            &:nth-child(5) {
+                grid-column: 1 / 2; 
+            }
+            &:nth-child(6) {
+                grid-column: 2 / 4; 
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &_bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $secondary-color-op65;
+                z-index: 10;
+            }
+            &_text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                padding: 0 29 * $multiple 0 16 * $multiple;
+                z-index: 10;
+                &_title {
+                    @include merriweather();
+                    font-size: 5 * $multiple;
+                    line-height: 7 * $multiple;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: $main-color-op94;
+                    margin-bottom: 5 * $multiple;
+                }
+                &_descr {
+                    @include raleway();
+                    font-size: 4 * $multiple;
+                    line-height: 6 * $multiple;
+                    font-weight: 400;
+                    color: $main-color-op90;
+                    margin-bottom: 15 * $multiple;
+                }
+                &_more {
+                    @include raleway();
+                    font-size: 4.5 * $multiple;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    color: rgba(#f9fbfb, .9);
+                    &::after {
+                        content: url('./assets/icons/arrow.png');
+                        margin-left: 5 * $multiple;
+                    }
+                }
+                
+            }
+            &_backside {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateX(-100%);
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+                background-color: #6df6eb;
+                &_title {
+                    @include merriweather();
+                    padding: 16 * $multiple 45 * $multiple 0 16 * $multiple;
+                    font-size: 5 * $multiple;
+                    line-height: 7 * $multiple;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: $secondary-color-op83;
+                    margin-bottom: 8 * $multiple;
+                }
+                &_descr {
+                    @include raleway();
+                    padding: 0 29 * $multiple 0 16 * $multiple;
+                    font-size: 4 * $multiple;
+                    line-height: 7 * $multiple;
+                    font-weight: 400;
+                    color: $secondary-color-op74; 
+                }
+                &_close {
+                    display: inline-block;
+                    padding-left: 16 * $multiple;
+                    font-size: 10 * $multiple;
+                    color: $secondary-color-op40;
+                    margin-top: 10 * $multiple;
+                    cursor: pointer;
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

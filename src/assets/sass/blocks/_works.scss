@@ -1,0 +1,13 @@
+.works {
+    padding: 32 * $multiple 0 31 * $multiple 0;
+    &__content {
+        @include dFlexStart();
+        flex-wrap: wrap;
+        margin-top: 30 * $multiple;
+        &_item {
+            &:not(:nth-child(3n)) {
+                margin: 0 3 * $multiple 3 * $multiple 0; 
+            }
+        }
+    }
+}

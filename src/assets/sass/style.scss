@@ -65,7 +65,7 @@ h3 {
     font-weight: 700;
     text-transform: uppercase;
     color: $secondary-color-op90;
-    line-height: $multiple * 12;
+    line-height: $multiple * 14;
     text-align: center;
 }
 
@@ -76,6 +76,14 @@ h3 {
     color: $secondary-color-op60;
     text-align: center;
     text-shadow: 0 0 $multiple $secondary-color-op50;
+}
+
+.dot_active {
+    background-color: #71f6eb;
+}
+
+.arrow_active {
+    background-color: #71f6eb;
 }
 
 // == /COMMON == //

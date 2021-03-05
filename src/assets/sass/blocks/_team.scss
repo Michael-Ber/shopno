@@ -1,0 +1,82 @@
+.team {
+    padding: 31 * $multiple 0 30 * $multiple 0;
+
+    &__subtitle {
+        margin-bottom: 31 * $multiple;
+    }
+
+    &__content {
+        @include dFlexSpaceBetweenFlStart();
+        flex-wrap: wrap;
+        &_item {
+            @include dFlexCenter();
+            position: relative;
+            &:nth-child(n + 4) {
+                margin-top: 3 * $multiple;
+            }
+            &:hover {
+                .team__content_item_descr {
+                    opacity: 1;
+                }
+            }
+            &_descr {
+                opacity: 0;
+                position: absolute;
+                bottom: 4 * $multiple;
+                left: 5 * $multiple;
+                right: 5 * $multiple;
+                padding: 11 * $multiple 13 * $multiple 10 * $multiple 9 * $multiple;
+                background-color: rgba(#6df6eb, .98);
+                box-shadow: 3px 6px 16px 0px rgba(20,20,21,0.18);
+                transition: .5s all;
+                &:before {
+                    content: '';
+                    border: 4 * $multiple solid transparent;
+                    border-bottom: 7 * $multiple solid #6df6eb;
+                    position: absolute;
+                    top: - 10 * $multiple;
+                    left: 5 * $multiple;
+                }
+                &_name {
+                    @include merriweather();
+                    display: block;
+                    font-size: 5 * $multiple;
+                    line-height: 6 * $multiple;
+                    font-weight: 700;
+                    color: rgba(#272727, .94);
+                    margin-bottom: 5 * $multiple;
+                    i {
+                        @include merriweather();
+                        font-size: 4 * $multiple;
+                        font-weight: 400;
+                        font-style: italic;
+                        color: #767070;
+                    }
+                }
+                &_text {
+                    @include raleway();
+                    display: block;
+                    font-size: 4 * $multiple;
+                    line-height: 6 * $multiple;
+                    font-weight: 400;
+                    color: $secondary-color-op80;
+                    margin-bottom: 9 * $multiple;
+                }
+                &_socials {
+                    @include dFlexStart();
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                        &:not(:last-child) {
+                            margin-right: 4 * $multiple;
+                        }
+                        &:hover {
+                            fill: darken(#4d4d4d, 20%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
