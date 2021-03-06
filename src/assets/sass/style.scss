@@ -45,13 +45,11 @@ h3 {
     border: $multiple/2 solid $secondary-color-op50;
     border-radius: $multiple/2;
     font-size: $multiple * 4;
-    font-weight: 400;
+    font-weight: 700;
     text-transform: uppercase;
-    color: $secondary-color;
+    color: $secondary-color-op70;
     cursor: pointer;
-    &:hover {
-        background-color: darken($main-color, 20%);
-    }
+    
 }
 
 .word-rect {
@@ -82,8 +80,8 @@ h3 {
     background-color: #71f6eb;
 }
 
-.arrow_active {
-    background-color: #71f6eb;
-}
+// .arrow_active {
+//     background-color: #71f6eb;
+// }
 
 // == /COMMON == //

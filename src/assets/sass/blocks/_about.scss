@@ -29,8 +29,14 @@
                     height: 10px;
                     border-radius: 100%;
                     background-color: #d0d0d0;
+                    cursor: pointer;
                     &:not(:last-child) {
                         margin-right: $multiple;
+                    }
+                    &:not(.dot_active) {
+                        &:hover {
+                            background-color: darken(#d0d0d0, 20%);
+                        }
                     }
                 }
             }

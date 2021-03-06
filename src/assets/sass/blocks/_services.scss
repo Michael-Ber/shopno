@@ -80,9 +80,13 @@
                     font-weight: 500;
                     text-transform: uppercase;
                     color: rgba(#f9fbfb, .9);
+                    cursor: pointer;
                     &::after {
                         content: url('./assets/icons/arrow.png');
                         margin-left: 5 * $multiple;
+                    }
+                    &:hover {
+                        color: darken($main-color-op90, 40%);
                     }
                 }
                 

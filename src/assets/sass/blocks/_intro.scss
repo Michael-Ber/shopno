@@ -51,6 +51,9 @@
         padding-right: $multiple * 23;
         &_button {
             margin-right: $multiple * 71;
+            &:hover {
+                background-color: darken($main-color, 20%);
+            }
         }
     }
 }

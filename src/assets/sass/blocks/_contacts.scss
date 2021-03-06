@@ -1,0 +1,93 @@
+.contacts {
+    position: relative;
+    padding: 29 * $multiple 0;
+    background: url('./assets/img/trees_bg.jpg') center (center/cover) no-repeat;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#f8fafb, .67);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    &__wrapper {
+        @include dFlexSpaceBetween();
+    }
+    &__data {
+        flex-basis: 153 * $multiple; 
+        background-color: rgba(#021623, .7);
+        padding: 11 * $multiple 8 * $multiple 9 * $multiple 9 * $multiple;
+        z-index: 20;
+        &_form {
+            &_input, &_textarea {
+                @include raleway();
+                display: block;
+                width: 100%;
+                padding: 3 * $multiple 2 * $multiple;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid $main-color-op10;
+                font-size: 4 * $multiple;
+                font-weight: 400;
+                color: rgba($main-color, .6);
+                &::placeholder {
+                    @include raleway();
+                    font-size: 4 * $multiple;
+                    font-weight: 400;
+                    color: rgba($main-color, .6);
+                }
+            }
+            &_input {
+                margin-bottom: 3 * $multiple;
+            }
+            &_textarea {
+                resize: none;
+            }
+            &_btn {
+                margin-top: 9 * $multiple;
+                background-color: #6eeee4;
+                &:hover {
+                    background-color: darken(#6eeee4, 20%);
+                }
+            }
+        }
+    }
+    &__address {
+        flex-basis: 125 * $multiple;
+        padding: 7 * $multiple 6 * $multiple 5 * $multiple 6 * $multiple;
+        background-color: rgba(#021623, .7);
+        z-index: 20;
+        &_links {
+            @include raleway();
+            display: block;
+            font-size: 4 * $multiple;
+            line-height: 6 * $multiple;
+            font-weight: 400;
+            color: $main-color-op70;
+            a {
+                color: $main-color-op70;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &:nth-child(6) {
+                margin-bottom: 4 * $multiple;
+            }
+        }
+        &_field {
+            @include raleway();
+            display: block;
+            font-size: 4 * $multiple;
+            line-height: 6 * $multiple;
+            font-weight: 400;
+            color: $main-color-op70;
+            &:nth-child(4) {
+                margin-bottom: 6 * $multiple;
+            }   
+        }     
+    }
+}

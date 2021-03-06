@@ -51,6 +51,8 @@
     padding-right: 92px; }
     .intro__footer_button {
       margin-right: 284px; }
+      .intro__footer_button:hover {
+        background-color: #cccccc; }
 
 .about {
   padding: 128px 36px 112px 36px;
@@ -84,9 +86,12 @@
           width: 10px;
           height: 10px;
           border-radius: 100%;
-          background-color: #d0d0d0; }
+          background-color: #d0d0d0;
+          cursor: pointer; }
           .about__content_carousel_dots_dot:not(:last-child) {
             margin-right: 4px; }
+          .about__content_carousel_dots_dot:not(.dot_active):hover {
+            background-color: #9d9d9d; }
     .about__content_text {
       width: 48%; }
       .about__content_text_title {
@@ -185,10 +190,13 @@
           font-size: 18px;
           font-weight: 500;
           text-transform: uppercase;
-          color: rgba(249, 251, 251, 0.9); }
+          color: rgba(249, 251, 251, 0.9);
+          cursor: pointer; }
           .services__content_item_text_more::after {
             content: url("./assets/icons/arrow.png");
             margin-left: 20px; }
+          .services__content_item_text_more:hover {
+            color: rgba(153, 153, 153, 0.9); }
       .services__content_item_backside {
         position: absolute;
         top: 0;
@@ -295,7 +303,8 @@
               fill: #1a1a1a; }
 
 .testimonials {
-  padding: 116px 0 132px 0; }
+  padding: 116px 0 132px 0;
+  background-color: #f9fbfb; }
   .testimonials__subtitle {
     margin-bottom: 128px; }
   .testimonials__carousel_track {
@@ -368,9 +377,12 @@
         width: 10px;
         height: 10px;
         border-radius: 100%;
-        background-color: #d0d0d0; }
+        background-color: #d0d0d0;
+        cursor: pointer; }
         .testimonials__carousel_triggers_dots_dot:not(:last-child) {
           margin-right: 4px; }
+        .testimonials__carousel_triggers_dots_dot:not(.dot_active):hover {
+          background-color: #9d9d9d; }
     .testimonials__carousel_triggers_arrows {
       display: flex;
       justify-content: flex-end;
@@ -382,7 +394,8 @@
         height: 48px;
         background-color: #ffffff;
         box-shadow: 3px 7px 11px 0px rgba(20, 20, 21, 0.05);
-        border-radius: 3px; }
+        border-radius: 3px;
+        cursor: pointer; }
       .testimonials__carousel_triggers_arrows_prev {
         position: relative;
         margin-right: 28px; }
@@ -404,6 +417,12 @@
           left: 50%;
           transform: translate(-50%, -50%);
           z-index: 20; }
+        .testimonials__carousel_triggers_arrows_prev:hover {
+          background-color: #71f6eb; }
+          .testimonials__carousel_triggers_arrows_prev:hover:after {
+            border-right: 16px solid rgba(0, 0, 0, 0.67); }
+          .testimonials__carousel_triggers_arrows_prev:hover:before {
+            border-right: 16px solid #71f6eb; }
       .testimonials__carousel_triggers_arrows_next {
         position: relative; }
         .testimonials__carousel_triggers_arrows_next:after {
@@ -424,6 +443,153 @@
           left: 50%;
           transform: translate(-45%, -50%);
           z-index: 20; }
+        .testimonials__carousel_triggers_arrows_next:hover {
+          background-color: #71f6eb; }
+          .testimonials__carousel_triggers_arrows_next:hover:after {
+            border-left: 16px solid rgba(0, 0, 0, 0.67); }
+          .testimonials__carousel_triggers_arrows_next:hover:before {
+            border-left: 16px solid #71f6eb; }
+
+.logo {
+  padding: 108px 0; }
+  .logo__stroke1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px; }
+    .logo__stroke1 svg:not(:last-child) {
+      margin-right: 80px; }
+    .logo__stroke1 svg:hover {
+      fill: #000; }
+  .logo__stroke2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .logo__stroke2 svg:nth-child(2) {
+      align-self: flex-start; }
+
+.contacts {
+  position: relative;
+  padding: 116px 0;
+  background: url("./assets/img/trees_bg.jpg") center center/cover no-repeat; }
+  .contacts:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(248, 250, 251, 0.67);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; }
+  .contacts__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .contacts__data {
+    flex-basis: 612px;
+    background-color: rgba(2, 22, 35, 0.7);
+    padding: 44px 32px 36px 36px;
+    z-index: 20; }
+    .contacts__data_form_input, .contacts__data_form_textarea {
+      font-family: 'Raleway', sans-serif;
+      display: block;
+      width: 100%;
+      padding: 12px 8px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6); }
+      .contacts__data_form_input::placeholder, .contacts__data_form_textarea::placeholder {
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.6); }
+    .contacts__data_form_input {
+      margin-bottom: 12px; }
+    .contacts__data_form_textarea {
+      resize: none; }
+    .contacts__data_form_btn {
+      margin-top: 36px;
+      background-color: #6eeee4; }
+      .contacts__data_form_btn:hover {
+        background-color: #1adccd; }
+  .contacts__address {
+    flex-basis: 500px;
+    padding: 28px 24px 20px 24px;
+    background-color: rgba(2, 22, 35, 0.7);
+    z-index: 20; }
+    .contacts__address_links {
+      font-family: 'Raleway', sans-serif;
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7); }
+      .contacts__address_links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none; }
+        .contacts__address_links a:hover {
+          text-decoration: underline; }
+      .contacts__address_links:nth-child(6) {
+        margin-bottom: 16px; }
+    .contacts__address_field {
+      font-family: 'Raleway', sans-serif;
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7); }
+      .contacts__address_field:nth-child(4) {
+        margin-bottom: 24px; }
+
+.footer {
+  padding: 92px 0;
+  background-color: #262b2e; }
+  .footer__follow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 44px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8); }
+    .footer__follow_socials {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .footer__follow_socials_social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 40px;
+        background-color: rgba(138, 138, 138, 0.19);
+        cursor: pointer; }
+        .footer__follow_socials_social:not(:last-child) {
+          margin-right: 8px; }
+        .footer__follow_socials_social svg {
+          width: 24px;
+          height: 20px;
+          fill: rgba(250, 244, 244, 0.48); }
+        .footer__follow_socials_social:hover {
+          background-color: rgba(113, 246, 235, 0.91); }
+          .footer__follow_socials_social:hover svg {
+            fill: rgba(0, 0, 0, 0.87); }
+    .footer__follow span {
+      margin-bottom: 8px; }
+  .footer__copyright {
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4); }
 
 .container {
   width: 1140px;
@@ -450,12 +616,10 @@ h3 {
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #000;
+  color: rgba(0, 0, 0, 0.7);
   cursor: pointer; }
-  .btn:hover {
-    background-color: #cccccc; }
 
 .word-rect {
   font-family: 'Montserrat', sans-serif;
@@ -479,7 +643,4 @@ h3 {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
 
 .dot_active {
-  background-color: #71f6eb; }
-
-.arrow_active {
   background-color: #71f6eb; }

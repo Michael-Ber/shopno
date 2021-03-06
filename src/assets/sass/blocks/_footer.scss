@@ -1,0 +1,50 @@
+.footer {
+    padding: 23 * $multiple 0;
+    background-color: #262b2e;
+    &__follow {
+        @include dFlexColumn();
+        @include raleway();
+        margin-bottom: 11 * $multiple;
+        font-size: 4 * $multiple;
+        line-height: 6 * $multiple;
+        font-weight: 400;
+        color: $main-color-op80;
+        &_socials {
+            @include dFlexCenter();
+            &_social {
+                @include dFlexCenter();
+                width: 11 * $multiple;
+                height: 10 * $multiple;
+                background-color: rgba(#8a8a8a, .19);
+                cursor: pointer;
+                &:not(:last-child) {
+                    margin-right: 2 * $multiple;
+                }
+                svg {
+                    width: 6 * $multiple;
+                    height: 5 * $multiple;
+                    fill: rgba(#faf4f4, .48);
+                }
+                &:hover {
+                    background-color: rgba(#71f6eb, .91);
+                    svg {
+                        fill: $secondary-color-op87;
+                    }
+                }
+            }
+            
+        }
+        span {
+            margin-bottom: 2 * $multiple;
+        }
+    }
+    &__copyright {
+        @include raleway();
+        display: block;
+        text-align: center;
+        font-size: 4 * $multiple;
+        line-height: 6 * $multiple;
+        font-weight: 500;
+        color: $main-color-op40;
+    }
+}

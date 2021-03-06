@@ -1,0 +1,24 @@
+.logo {
+    padding: 27 * $multiple 0;
+    &__stroke1 {
+        @include dFlexCenter();
+        margin-bottom: 10 * $multiple;
+        svg {
+            &:not(:last-child) {
+                margin-right: 20 * $multiple;
+            }
+            &:hover {
+                fill: #000;
+            }
+        }
+    }
+    &__stroke2 {
+        @include dFlexSpaceBetween();
+        svg {
+            &:nth-child(2) {
+                align-self: flex-start;
+            }
+        }
+    }
+    
+}

@@ -1,6 +1,6 @@
 .testimonials {
     padding: 29 * $multiple 0 33 * $multiple 0;
-
+    background-color: #f9fbfb;
     &__subtitle {
         margin-bottom: 32 * $multiple;
     }
@@ -77,8 +77,14 @@
                     height: 10px;
                     border-radius: 100%;
                     background-color: #d0d0d0;
+                    cursor: pointer;
                     &:not(:last-child) {
                         margin-right: $multiple;
+                    }
+                    &:not(.dot_active) {
+                        &:hover {
+                            background-color: darken(#d0d0d0, 20%);
+                        }
                     }
                 }
             }
@@ -92,6 +98,7 @@
                     background-color: #ffffff;
                     box-shadow: 3px 7px 11px 0px rgba(20,20,21,0.05);
                     border-radius: 3px;
+                    cursor: pointer;
                 }
                 &_prev {
                     position: relative;
@@ -116,6 +123,15 @@
                         transform: translate(-50%, -50%);
                         z-index: 20;
                     }
+                    &:hover {
+                        background-color: #71f6eb;
+                        &:after {
+                            border-right: 4 * $multiple solid $secondary-color-op67;
+                        }
+                        &:before {
+                            border-right: 4 * $multiple solid #71f6eb;
+                        }
+                    }
                 }
                 &_next {
                     position: relative;
@@ -139,8 +155,18 @@
                         transform: translate(-45%, -50%);
                         z-index: 20;
                     }
+                    &:hover {
+                        background-color: #71f6eb;
+                        &:after {
+                            border-left: 4 * $multiple solid $secondary-color-op67;
+                        }
+                        &:before {
+                            border-left: 4 * $multiple solid #71f6eb;
+                        }
+                    }
                 }
             }
         }
     }
 }
+
