@@ -86,14 +86,43 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/assets/js/blocks/stars.js":
+/*!***************************************!*\
+  !*** ./src/assets/js/blocks/stars.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const stars = (starSelector, parentSelector) => {
+  const star = document.querySelectorAll(starSelector),
+        stars = document.querySelector(parentSelector);
+  star.forEach(item => {
+    item.addEventListener('click', () => {
+      stars.setAttribute('data-total-value', item.getAttribute('data-item-value'));
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (stars);
+
+/***/ }),
+
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _blocks_stars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/stars */ "./src/assets/js/blocks/stars.js");
 
+window.addEventListener('DOMContentLoaded', () => {
+  Object(_blocks_stars__WEBPACK_IMPORTED_MODULE_0__["default"])('.testimonials__carousel_track_item_descr_stars_star', '.testimonials__carousel_track_item_descr_stars');
+});
 
 /***/ })
 

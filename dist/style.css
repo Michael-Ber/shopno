@@ -359,9 +359,23 @@
         .testimonials__carousel_track_item_descr_stars {
           display: flex;
           justify-content: center;
-          align-items: center; }
-          .testimonials__carousel_track_item_descr_stars img:not(:last-child) {
-            margin-right: 4px; }
+          align-items: center;
+          flex-direction: row-reverse;
+          color: gray;
+          font-size: 20px; }
+          .testimonials__carousel_track_item_descr_stars_star {
+            cursor: pointer;
+            transition: .2s all; }
+            .testimonials__carousel_track_item_descr_stars_star:not(:first-child) {
+              margin-right: 4px; }
+            .testimonials__carousel_track_item_descr_stars_star:hover, .testimonials__carousel_track_item_descr_stars_star:hover ~ .testimonials__carousel_track_item_descr_stars_star {
+              color: #4d4d4d; }
+        .testimonials__carousel_track_item_descr_stars[data-total-value="1"] .testimonials__carousel_track_item_descr_stars_star:nth-child(n+5),
+        .testimonials__carousel_track_item_descr_stars[data-total-value="2"] .testimonials__carousel_track_item_descr_stars_star:nth-child(n+4),
+        .testimonials__carousel_track_item_descr_stars[data-total-value="3"] .testimonials__carousel_track_item_descr_stars_star:nth-child(n+3),
+        .testimonials__carousel_track_item_descr_stars[data-total-value="4"] .testimonials__carousel_track_item_descr_stars_star:nth-child(n+2),
+        .testimonials__carousel_track_item_descr_stars[data-total-value="5"] .testimonials__carousel_track_item_descr_stars_star:nth-child(n+1) {
+          color: #f2da3b; }
   .testimonials__carousel_triggers {
     display: flex;
     justify-content: space-between;

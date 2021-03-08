@@ -56,11 +56,31 @@
                     }
                     &_stars {
                         @include dFlexCenter();
-                        img {
-                            &:not(:last-child) {
+                        flex-direction: row-reverse;
+                        color: gray;
+                        font-size: 5 * $multiple;
+                        &_star {
+                            cursor: pointer;
+                            transition: .2s all;
+                            &:not(:first-child) {
                                 margin-right: $multiple;
                             }
+                            &:hover, &:hover~.testimonials__carousel_track_item_descr_stars_star {
+                                color: darken(gray, 20%);
+                            }
                         }
+                    }
+                    &_stars[data-total-value="1"] 
+                    .testimonials__carousel_track_item_descr_stars_star:nth-child(n+5),
+                    &_stars[data-total-value="2"] 
+                    .testimonials__carousel_track_item_descr_stars_star:nth-child(n+4),
+                    &_stars[data-total-value="3"] 
+                    .testimonials__carousel_track_item_descr_stars_star:nth-child(n+3),
+                    &_stars[data-total-value="4"] 
+                    .testimonials__carousel_track_item_descr_stars_star:nth-child(n+2),
+                    &_stars[data-total-value="5"] 
+                    .testimonials__carousel_track_item_descr_stars_star:nth-child(n+1) {
+                        color: #f2da3b;
                     }
                 }
             }
