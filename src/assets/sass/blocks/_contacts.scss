@@ -1,7 +1,10 @@
 .contacts {
     position: relative;
-    padding: 29 * $multiple 0;
+    padding: 29 * $multiple $multiple * 4;
     background: url('./assets/img/trees_bg.jpg') center (center/cover) no-repeat;
+    @media(max-width: $breakpoints-xl-max) {
+        padding: 15 * $multiple $multiple * 4;
+    }
     &:before {
         content: '';
         width: 100%;
@@ -17,10 +20,13 @@
         @include dFlexSpaceBetween();
     }
     &__data {
-        flex-basis: 153 * $multiple; 
+        flex-basis: 53%; //153 * $multiple
         background-color: rgba(#021623, .7);
         padding: 11 * $multiple 8 * $multiple 9 * $multiple 9 * $multiple;
         z-index: 20;
+        @media(max-width: $breakpoints-xl-max) {
+            // flex-basis: 105 * $multiple; 
+        }
         &_form {
             &_input, &_textarea {
                 @include raleway();
@@ -30,12 +36,12 @@
                 background-color: transparent;
                 border: none;
                 border-bottom: 1px solid $main-color-op10;
-                font-size: 4 * $multiple;
+                font-size: $fs-xs;
                 font-weight: 400;
                 color: rgba($main-color, .6);
                 &::placeholder {
                     @include raleway();
-                    font-size: 4 * $multiple;
+                    font-size: $fs-xs;
                     font-weight: 400;
                     color: rgba($main-color, .6);
                 }
@@ -56,14 +62,20 @@
         }
     }
     &__address {
-        flex-basis: 125 * $multiple;
-        padding: 7 * $multiple 6 * $multiple 5 * $multiple 6 * $multiple;
+        flex-basis: 35%; // 125 * $multiple
+        padding: 5 * $multiple 6 * $multiple 5 * $multiple 6 * $multiple;
         background-color: rgba(#021623, .7);
         z-index: 20;
+        @media(max-width: $breakpoints-xl-max) {
+            padding: 5 * $multiple 6 * $multiple 5 * $multiple 6 * $multiple;
+            iframe {
+                width: 380px;
+            }
+        }
         &_links {
             @include raleway();
             display: block;
-            font-size: 4 * $multiple;
+            font-size: $fs-xs;
             line-height: 6 * $multiple;
             font-weight: 400;
             color: $main-color-op70;
@@ -81,7 +93,7 @@
         &_field {
             @include raleway();
             display: block;
-            font-size: 4 * $multiple;
+            font-size: $fs-xs;
             line-height: 6 * $multiple;
             font-weight: 400;
             color: $main-color-op70;

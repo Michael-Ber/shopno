@@ -1,5 +1,9 @@
 .team {
-    padding: 31 * $multiple 0 30 * $multiple 0;
+    padding: 31 * $multiple $multiple * 4 30 * $multiple $multiple * 4;
+
+    @media(max-width: $breakpoints-xl-max) {
+        padding: 20 * $multiple $multiple * 4 20 * $multiple $multiple * 4;
+    }
 
     &__subtitle {
         margin-bottom: 31 * $multiple;
@@ -8,6 +12,9 @@
     &__content {
         @include dFlexSpaceBetweenFlStart();
         flex-wrap: wrap;
+        @media(max-width: $breakpoints-xl-max) {
+            justify-content: center;
+        }
         &_item {
             @include dFlexCenter();
             position: relative;
@@ -18,6 +25,18 @@
                 .team__content_item_descr {
                     opacity: 1;
                 }
+            }
+            @media(max-width: $breakpoints-xl-max) {
+                &:nth-child(n + 4) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+3) {
+                    margin-top: 3 * $multiple;
+                }
+                &:nth-child(2n) {
+                    margin-left: 3 * $multiple;
+                }
+
             }
             &_descr {
                 opacity: 0;
@@ -40,14 +59,14 @@
                 &_name {
                     @include merriweather();
                     display: block;
-                    font-size: 5 * $multiple;
+                    font-size: $fs-xl;
                     line-height: 6 * $multiple;
                     font-weight: 700;
                     color: rgba(#272727, .94);
                     margin-bottom: 5 * $multiple;
                     i {
                         @include merriweather();
-                        font-size: 4 * $multiple;
+                        font-size: $fs-xs;
                         font-weight: 400;
                         font-style: italic;
                         color: #767070;
@@ -56,7 +75,7 @@
                 &_text {
                     @include raleway();
                     display: block;
-                    font-size: 4 * $multiple;
+                    font-size: $fs-s;
                     line-height: 6 * $multiple;
                     font-weight: 400;
                     color: $secondary-color-op80;

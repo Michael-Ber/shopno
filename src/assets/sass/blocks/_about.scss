@@ -1,8 +1,9 @@
 .about {
     padding: $multiple * 32 $multiple * 9 $multiple * 28 $multiple * 9;
     background-color: #f8fafa;
-    &__subtitle {
-        margin-bottom: $multiple * 37;
+
+    @media(max-width: $breakpoints-xl-max) {
+        padding: $multiple * 20 $multiple * 4 $multiple * 18 $multiple * 4;
     }
     &__content {
         @include dFlexSpaceBetweenFlStart();
@@ -11,14 +12,23 @@
             &_bg {
                 @include dFlexCenter();
                 width: 100%;
-                height: 412px;
+                height: $multiple * 103;
                 background-color: #eff0f2;
                 margin: $multiple * 9 0 $multiple * 20;
+                @media(max-width: $breakpoints-xl-max) {
+                    height: $multiple * 83;
+                }
             }
             &_frame {
                 width: 82%;
                 &_track {
                     list-style-type: none;
+                    &_item {
+                        display: flex;
+                        img {
+                            width: 100%;
+                        }
+                    }
                 }
             }
             &_dots {
@@ -53,7 +63,7 @@
             &_paragraph {
                 @include raleway();
                 display: block;
-                font-size: 4 * $multiple;
+                font-size: $fs-s;
                 line-height: 7 * $multiple;
                 font-weight: 400;
                 color: $secondary-color-op74;

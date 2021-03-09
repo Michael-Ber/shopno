@@ -1,5 +1,8 @@
 .logo {
-    padding: 27 * $multiple 0;
+    padding: 27 * $multiple $multiple * 4;
+    @media(max-width: $breakpoints-xl-max) {
+        padding: 15 * $multiple $multiple * 4;
+    }
     &__stroke1 {
         @include dFlexCenter();
         margin-bottom: 10 * $multiple;

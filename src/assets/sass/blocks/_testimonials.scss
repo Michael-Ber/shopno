@@ -1,8 +1,9 @@
 .testimonials {
-    padding: 29 * $multiple 0 33 * $multiple 0;
+    padding: 29 * $multiple $multiple * 4 33 * $multiple $multiple * 4;
     background-color: #f9fbfb;
-    &__subtitle {
-        margin-bottom: 32 * $multiple;
+
+    @media(max-width: $breakpoints-xl-max) {
+        padding: 15 * $multiple $multiple * 4 15 * $multiple $multiple * 4;
     }
 
     &__carousel {
@@ -18,6 +19,9 @@
                     background-color: #ecedef;
                     border-radius: 3px;
                     margin: 6 * $multiple 0;
+                    @media(max-width: $breakpoints-xl-max) {
+                        width: 38%;
+                    }
                     img {
                         width: 80 * $multiple;
                         height: 102 * $multiple;
@@ -33,21 +37,21 @@
                     margin-top: 6 * $multiple;
                     &_name {
                         @include merriweather();
-                        font-size: 5 * $multiple;
+                        font-size: $fs-xl;
                         line-height: 7 * $multiple;
                         font-weight: 700;
                         color: $secondary-color-op94;
                         margin-bottom: 5 * $multiple;
                         text-align: center;
                         i {
-                            font-size: 4 * $multiple;
+                            font-size: $fs-xs;
                             font-weight: 400;
                             color: #787878;
                         }
                     }
                     &_text {
                         @include raleway();
-                        font-size: 4 * $multiple;
+                        font-size: $fs-s;
                         line-height: 7 * $multiple;
                         font-weight: 400;
                         color: $secondary-color-op70;
@@ -58,7 +62,7 @@
                         @include dFlexCenter();
                         flex-direction: row-reverse;
                         color: gray;
-                        font-size: 5 * $multiple;
+                        font-size: $fs-xl;
                         &_star {
                             cursor: pointer;
                             transition: .2s all;

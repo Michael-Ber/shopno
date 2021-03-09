@@ -1,12 +1,33 @@
 .works {
-    padding: 32 * $multiple 0 31 * $multiple 0;
+    padding: 32 * $multiple $multiple * 4 31 * $multiple $multiple * 4;
+
+    @media(max-width: $breakpoints-xl-max) {
+        padding: 20 * $multiple $multiple * 4 20 * $multiple $multiple * 4;
+    }
     &__content {
         @include dFlexStart();
         flex-wrap: wrap;
         margin-top: 30 * $multiple;
+        @media(max-width: $breakpoints-xl-max) {
+            margin-top: 20 * $multiple;
+            justify-content: center;
+        }
+
         &_item {
             &:not(:nth-child(3n)) {
                 margin: 0 3 * $multiple 3 * $multiple 0; 
+            }
+            @media(max-width: $breakpoints-xl-max) {
+                margin: 0; 
+                &:not(:nth-child(2n)) {
+                    margin: 0 3 * $multiple 3 * $multiple 0;
+                }
+            }
+            @media(max-width: $breakpoints-l-max) {
+                margin: 0;
+                &:not(:last-child) {
+                    margin: 0 0 3 * $multiple 0;
+                }
             }
         }
     }

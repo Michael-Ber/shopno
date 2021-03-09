@@ -13,23 +13,30 @@
 
 // == COMMON == //
 
+html {
+    font-size: 16px;
+    @media(max-width: $breakpoints-l-max) {
+        font-size: 14px;
+    }
+    
+}
 
 
 .container {
-    width: 1140px; 
+    max-width: $container-xl-max; 
     margin: 0 auto;
 }
 
 h1 {
-    font-size: 45px;
+    font-size: rem(45px);
 }
 
 h2 {
-    font-size: 38px;
+    font-size: rem(38px);
 }
 
 h3 {
-    font-size: 18px;
+    font-size: rem(18px);
 }
 
 * {
@@ -44,12 +51,14 @@ h3 {
     padding: $multiple * 5 $multiple * 12;
     border: $multiple/2 solid $secondary-color-op50;
     border-radius: $multiple/2;
-    font-size: $multiple * 4;
+    font-size: $fs-l;
     font-weight: 700;
     text-transform: uppercase;
     color: $secondary-color-op70;
     cursor: pointer;
-    
+    @media(max-width: $breakpoints-xl-max) {
+        font-size: $fs-xs;
+    } 
 }
 
 .word-rect {
@@ -74,14 +83,36 @@ h3 {
     color: $secondary-color-op60;
     text-align: center;
     text-shadow: 0 0 $multiple $secondary-color-op50;
+    margin-bottom: 31 * $multiple;
+    @media(max-width: $breakpoints-xl-max) {
+        margin-bottom: 20 * $multiple;
+    }
 }
 
 .dot_active {
     background-color: #71f6eb;
 }
 
-// .arrow_active {
-//     background-color: #71f6eb;
-// }
+@media(max-width: $breakpoints-xl-max) {
+    .container {
+        max-width: $container-l-max;
+    }
+}
+@media(max-width: $breakpoints-l-max) {
+    .container {
+        max-width: $container-m-max;
+    }
+}
+@media(max-width: $breakpoints-m-max) {
+    .container {
+        max-width: $container-s-max;
+    }
+}
+@media(max-width: $breakpoints-s-max) {
+    .container {
+        max-width: 100%;
+    }
+}
+
 
 // == /COMMON == //

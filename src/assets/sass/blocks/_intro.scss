@@ -1,6 +1,10 @@
 .intro {
-    padding: $multiple * 16 0 $multiple * 33 0;
+    padding: $multiple * 16 $multiple * 4 $multiple * 33 $multiple * 4;
     background-color: rgba(#eff0f2, .98);
+
+    @media(max-width: $breakpoints-xl-max) {
+        padding: $multiple * 10 $multiple * 4 $multiple * 20 $multiple * 4;
+    }
     &__header {
         @include dFlexSpaceBetween();
         margin-bottom: $multiple * 51;
@@ -8,13 +12,13 @@
             @include montserrat();
             padding: $multiple * 3;
             box-shadow: 0px 0px 2px 0px rgba(21,21,22,0.75);
-            font-size: $multiple * 4;
+            font-size: $fs-m;
             font-weight: 700;
             text-transform: uppercase;
             color: $secondary-color;
             border: $multiple * 2 solid #170f1c;
             strong {
-                font-size: $multiple * 5;
+                font-size: $fs-xxl;
                 color: #77efe5;
             }
         }

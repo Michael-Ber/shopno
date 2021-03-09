@@ -1,3 +1,13 @@
+// == FUNCTION == //
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1); // equal to $num / 1px => remove px
+}
+@function rem($num) {
+    @return (strip-unit($num) / 16) * 1rem; // 16 - it is a standart value of font-size in html
+}
+// == /FUNCTION == //
+
 $main-color: #fff;  
 $main-color-op94: rgba(#fff, .94); 
 $main-color-op90: rgba(#ffffff, .9); 
@@ -19,4 +29,26 @@ $secondary-color-op60: rgba(#000, .6);
 $secondary-color-op50: rgba(#000, .5);
 $secondary-color-op40: rgba(#000, .4);
 $secondary-color-op30: rgba(#000, .3);
-$multiple: 4px;
+$multiple: rem(4px);
+$fs-xs: rem(15px);
+$fs-s: rem(16px);
+$fs-m: rem(17px);
+$fs-l: rem(18px);
+$fs-xl: rem(20px);
+$fs-xxl: rem(21px);
+$fs-xxxl: rem(40px);
+
+$breakpoints-s-min: 576px;
+$breakpoints-s-max: $breakpoints-s-min - 1;
+$breakpoints-m-min: 768px;
+$breakpoints-m-max: $breakpoints-m-min - 1;
+$breakpoints-l-min: 992px;
+$breakpoints-l-max: $breakpoints-l-min - 1;
+$breakpoints-xl-min: 1200px;
+$breakpoints-xl-max: $breakpoints-xl-min - 1;
+
+$container-s-max: 540x;
+$container-m-max: 720px;
+$container-l-max: 960px;
+$container-xl-max: 1140px;
+

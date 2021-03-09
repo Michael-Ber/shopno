@@ -1,11 +1,11 @@
 .footer {
-    padding: 23 * $multiple 0;
+    padding: 23 * $multiple $multiple * 4;
     background-color: #262b2e;
     &__follow {
         @include dFlexColumn();
         @include raleway();
         margin-bottom: 11 * $multiple;
-        font-size: 4 * $multiple;
+        font-size: $fs-s;
         line-height: 6 * $multiple;
         font-weight: 400;
         color: $main-color-op80;
@@ -42,7 +42,7 @@
         @include raleway();
         display: block;
         text-align: center;
-        font-size: 4 * $multiple;
+        font-size: $fs-s;
         line-height: 6 * $multiple;
         font-weight: 500;
         color: $main-color-op40;
