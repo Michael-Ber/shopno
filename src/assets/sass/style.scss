@@ -18,7 +18,9 @@ html {
     @media(max-width: $breakpoints-l-max) {
         font-size: 14px;
     }
-    
+    @media(max-width: $breakpoints-s-max) {
+        font-size: 10px;
+    }
 }
 
 
@@ -74,6 +76,9 @@ h3 {
     color: $secondary-color-op90;
     line-height: $multiple * 14;
     text-align: center;
+    @media(max-width: $breakpoints-s-max) {
+        margin-bottom: 3 * $multiple;
+    }
 }
 
 .main_subtitle {
@@ -86,6 +91,9 @@ h3 {
     margin-bottom: 31 * $multiple;
     @media(max-width: $breakpoints-xl-max) {
         margin-bottom: 20 * $multiple;
+    }
+    @media(max-width: $breakpoints-s-max) {
+        margin-bottom: 10 * $multiple;
     }
 }
 
@@ -106,6 +114,9 @@ h3 {
 @media(max-width: $breakpoints-m-max) {
     .container {
         max-width: $container-s-max;
+    }
+    h1 {
+        font-size: rem(30px);
     }
 }
 @media(max-width: $breakpoints-s-max) {

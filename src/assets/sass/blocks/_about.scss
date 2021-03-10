@@ -5,18 +5,35 @@
     @media(max-width: $breakpoints-xl-max) {
         padding: $multiple * 20 $multiple * 4 $multiple * 18 $multiple * 4;
     }
+    @media(max-width: $breakpoints-m-max) {
+        padding: $multiple * 10 $multiple * 4 $multiple * 10 $multiple * 4;
+    }
     &__content {
         @include dFlexSpaceBetweenFlStart();
+        @media(max-width: $breakpoints-m-max) {
+            @include dFlexCenter();
+            flex-direction: column;
+        }
         &_carousel {
             width: 42%;
+            @media(max-width: $breakpoints-m-max) {
+                @include dFlexCenter();
+                width: 65%;
+                flex-direction: column;
+                margin-bottom: 10 * $multiple;
+            }
             &_bg {
                 @include dFlexCenter();
-                width: 100%;
-                height: $multiple * 103;
+                width: 70%;
+                height: $multiple * 65;
                 background-color: #eff0f2;
-                margin: $multiple * 9 0 $multiple * 20;
-                @media(max-width: $breakpoints-xl-max) {
-                    height: $multiple * 83;
+                margin: $multiple * 9 auto $multiple * 20 auto;
+                @media(max-width: $breakpoints-l-max) {
+                    width: 100%;
+                    height: $multiple * 80;
+                }
+                @media(max-width: $breakpoints-s-max) {
+                    height: $multiple * 110;
                 }
             }
             &_frame {
@@ -24,11 +41,20 @@
                 &_track {
                     list-style-type: none;
                     &_item {
-                        display: flex;
+                        @include dFlexCenter();
                         img {
                             width: 100%;
+                            @media(max-width: $breakpoints-s-max) {
+                                width: 70 * $multiple;
+                                height: 120 * $multiple;
+                                object-fit: cover;
+                            }
                         }
+                        
                     }
+                }
+                @media(max-width: $breakpoints-s-max) {
+                    width: 72%;
                 }
             }
             &_dots {
@@ -50,15 +76,22 @@
                     }
                 }
             }
+            
         }
         &_text {
             width: 48%;
+            @media(max-width: $breakpoints-m-max) {
+                width: 65%;
+            }
             &_title {
                 @include merriweather();
                 font-weight: 700;
                 text-transform: uppercase;
                 color: $secondary-color-op74;
                 margin-bottom: 8 * $multiple;
+                @media(max-width: $breakpoints-m-max) {
+                    text-align: center;
+                }
             }
             &_paragraph {
                 @include raleway();

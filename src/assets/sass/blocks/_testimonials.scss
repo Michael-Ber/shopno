@@ -12,6 +12,9 @@
             list-style-type: none;
             &_item {
                 @include dFlexSpaceBetweenFlStart();
+                @media(max-width: $breakpoints-m-max) {
+                    @include dFlexColumn();
+                }
                 &_photo {
                     @include dFlexCenter();
                     width: 34%;
@@ -21,6 +24,12 @@
                     margin: 6 * $multiple 0;
                     @media(max-width: $breakpoints-xl-max) {
                         width: 38%;
+                    }
+                    @media(max-width: $breakpoints-l-max) {
+                        width: 43%;
+                    }
+                    @media(max-width: $breakpoints-m-max) {
+                        width: 75%;
                     }
                     img {
                         width: 80 * $multiple;
@@ -35,6 +44,17 @@
                     border-radius: 3px;
                     padding: 25 * $multiple 20 * $multiple 13 * $multiple 21 * $multiple;
                     margin-top: 6 * $multiple;
+                    @media(max-width: $breakpoints-l-max) {
+                        width: 53%;
+                        padding: 15 * $multiple 20 * $multiple 13 * $multiple 21 * $multiple;
+                    }
+                    @media(max-width: $breakpoints-m-max) {
+                        height: auto;
+                        padding: 12 * $multiple 8 * $multiple 13 * $multiple 8 * $multiple;
+                    }
+                    @media(max-width: $breakpoints-m-max) {
+                        width: 75%;
+                    }
                     &_name {
                         @include merriweather();
                         font-size: $fs-xl;
@@ -91,6 +111,9 @@
         }
         &_triggers {
             @include dFlexSpaceBetween();
+            @media(max-width: $breakpoints-m-max) {
+                @include dFlexColumn();
+            }
             &_dots {
                 @include dFlexCenter();
                 list-style-type: none;
@@ -116,6 +139,10 @@
                 @include dFlexEnd();
                 width: 56%;
                 list-style-type: none;
+                @media(max-width: $breakpoints-m-max) {
+                    width: auto;
+                    margin-top: 4 * $multiple;
+                }
                 &_prev, &_next {
                     width: 12 * $multiple;
                     height: 12 * $multiple;

@@ -5,9 +5,15 @@
     @media(max-width: $breakpoints-xl-max) {
         padding: $multiple * 10 $multiple * 4 $multiple * 20 $multiple * 4;
     }
+    @media(max-width: $breakpoints-m-max) {
+        padding: $multiple * 10 $multiple * 4 $multiple * 10 $multiple * 4;
+    }
     &__header {
         @include dFlexSpaceBetween();
         margin-bottom: $multiple * 51;
+        @media(max-width: $breakpoints-m-max) {
+            margin-bottom: $multiple * 25;
+        }
         &_logo {
             @include montserrat();
             padding: $multiple * 3;
@@ -47,17 +53,33 @@
             text-align: center;
             color: #505050;
         }
+        @media(max-width: $breakpoints-m-max) {
+            margin-bottom: $multiple * 20;
+        }
     }
     &__footer {
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
         padding-right: $multiple * 23;
+        @media(max-width: $breakpoints-s-max) {
+            padding-right: 0;
+            img {
+                width: 30%;
+            }
+        }
         &_button {
             margin-right: $multiple * 71;
+            @media(max-width: $breakpoints-m-max) {
+                margin-right: $multiple * 65;
+            }
+            @media(max-width: $breakpoints-s-max) {
+                margin-right: $multiple * 20;
+            }
             &:hover {
                 background-color: darken($main-color, 20%);
             }
         }
+        
     }
 }

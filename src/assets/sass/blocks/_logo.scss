@@ -6,6 +6,9 @@
     &__stroke1 {
         @include dFlexCenter();
         margin-bottom: 10 * $multiple;
+        @media(max-width: $breakpoints-l-max) {
+            margin-bottom: 0;
+        }
         svg {
             &:not(:last-child) {
                 margin-right: 20 * $multiple;
@@ -17,10 +20,27 @@
     }
     &__stroke2 {
         @include dFlexSpaceBetween();
+        @media(max-width: $breakpoints-l-max) {
+            @include dFlexCenter();
+            flex-wrap: wrap;
+            height: 46 * $multiple; // for correct distance between wrapped strokes
+        }
+        @media(max-width: $breakpoints-m-max) {
+            height: 72 * $multiple;
+        }
         svg {
             &:nth-child(2) {
                 align-self: flex-start;
             }
+            @media(max-width: $breakpoints-l-max) {
+                &:not(:last-child) {
+                    margin-right: 6 * $multiple;
+                }
+                &:nth-child(2) {
+                    align-self: auto;
+                }
+            }
+            
         }
     }
     

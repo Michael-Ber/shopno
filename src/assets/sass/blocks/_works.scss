@@ -7,12 +7,9 @@
     &__content {
         @include dFlexStart();
         flex-wrap: wrap;
-        margin-top: 30 * $multiple;
         @media(max-width: $breakpoints-xl-max) {
-            margin-top: 20 * $multiple;
             justify-content: center;
         }
-
         &_item {
             &:not(:nth-child(3n)) {
                 margin: 0 3 * $multiple 3 * $multiple 0; 
@@ -28,6 +25,11 @@
                 &:not(:last-child) {
                     margin: 0 0 3 * $multiple 0;
                 }
+            }
+        }
+        @media(max-width: $breakpoints-s-max) {
+            img {
+                width: 100%;
             }
         }
     }

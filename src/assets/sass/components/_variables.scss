@@ -36,6 +36,7 @@ $fs-m: rem(17px);
 $fs-l: rem(18px);
 $fs-xl: rem(20px);
 $fs-xxl: rem(21px);
+$fs-arrow: rem(27px);
 $fs-xxxl: rem(40px);
 
 $breakpoints-s-min: 576px;
@@ -47,7 +48,7 @@ $breakpoints-l-max: $breakpoints-l-min - 1;
 $breakpoints-xl-min: 1200px;
 $breakpoints-xl-max: $breakpoints-xl-min - 1;
 
-$container-s-max: 540x;
+$container-s-max: 540px;
 $container-m-max: 720px;
 $container-l-max: 960px;
 $container-xl-max: 1140px;

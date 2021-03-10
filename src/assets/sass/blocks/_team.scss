@@ -18,6 +18,9 @@
         &_item {
             @include dFlexCenter();
             position: relative;
+            img {
+                width: 100%;
+            }
             &:nth-child(n + 4) {
                 margin-top: 3 * $multiple;
             }
@@ -30,13 +33,26 @@
                 &:nth-child(n + 4) {
                     margin-top: 0;
                 }
-                &:nth-child(n+3) {
+                &:nth-child(n + 3) {
                     margin-top: 3 * $multiple;
                 }
                 &:nth-child(2n) {
                     margin-left: 3 * $multiple;
                 }
-
+            }
+            @media(max-width: $breakpoints-l-max) {
+                &:nth-child(n + 4) {
+                    margin-top: 0;
+                }
+                &:nth-child(n + 3) {
+                    margin-top: 0;
+                }
+                &:nth-child(2n) {
+                    margin-left: 0;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 3 * $multiple;
+                }
             }
             &_descr {
                 opacity: 0;
@@ -96,6 +112,7 @@
                     }
                 }
             }
+            
         }
     }
 }
