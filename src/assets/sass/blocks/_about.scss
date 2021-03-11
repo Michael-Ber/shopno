@@ -38,10 +38,26 @@
             }
             &_frame {
                 width: 82%;
+                overflow: hidden;
                 &_track {
+                    @include dFlexStart();
                     list-style-type: none;
+                    transition: .5s all;
                     &_item {
                         @include dFlexCenter();
+                        min-width: 275px;
+                        @media(max-width: $breakpoints-xl-max) {
+                            min-width: 231px;
+                        }
+                        @media(max-width: $breakpoints-l-max) {
+                            min-width: 247px;
+                        }
+                        @media(max-width: $breakpoints-m-max) {
+                            min-width: 287px;
+                        }
+                        @media(max-width: $breakpoints-s-max) {
+                            min-width: 252px;
+                        }
                         img {
                             width: 100%;
                             @media(max-width: $breakpoints-s-max) {

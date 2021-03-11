@@ -7,11 +7,16 @@
     }
 
     &__carousel {
+        &_frame {
+            overflow: hidden;
+        }
         &_track {
             @include dFlexStart();
             list-style-type: none;
+            transition: .5s all;
             &_item {
                 @include dFlexSpaceBetweenFlStart();
+                min-width: $container-xl-max;
                 @media(max-width: $breakpoints-m-max) {
                     @include dFlexColumn();
                 }

@@ -1,6 +1,8 @@
 .intro {
+    position: relative;
     padding: $multiple * 16 $multiple * 4 $multiple * 33 $multiple * 4;
     background-color: rgba(#eff0f2, .98);
+    overflow: hidden;
 
     @media(max-width: $breakpoints-xl-max) {
         padding: $multiple * 10 $multiple * 4 $multiple * 20 $multiple * 4;
@@ -36,9 +38,35 @@
                 height: $multiple;
                 background-color: $secondary-color-op60;
                 border-radius: $multiple / 2;
+                transition: .2s all;
                 &:not(:last-child) {
                     margin-bottom: $multiple;
                 }
+            }
+        }
+        &_menu {
+            @include dFlexColumnEvenly();
+            @include raleway();
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: .5s all;
+            padding: 10 * $multiple 10 * $multiple;
+            background-color: $secondary-color-op50;
+            font-size: $fs-xxl;
+            &_item {
+                text-decoration: none;
+                color: $main-color-op80;
+                &:hover {
+                    color: $main-color;
+                    text-decoration: underline;
+                }
+            }
+            &_active {
+                transform: translateX(0%);
             }
         }
     }

@@ -51,3 +51,9 @@
     justify-content: center;
     align-items: flex-start;
 }
+@mixin dFlexColumnEvenly() {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
