@@ -24,7 +24,9 @@
             justify-content: center;
         }
         @media(max-width: $breakpoints-s-max) {
-            grid-template-columns: 100%;
+            grid-template-columns: 75%;
+            grid-template-rows: repeat(3, minmax(250px, auto));
+            grid-auto-rows: minmax(250px, auto);
             justify-content: center;
         }
         &_item {
