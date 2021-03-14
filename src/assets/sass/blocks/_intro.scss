@@ -99,7 +99,7 @@
         &_button {
             margin-right: $multiple * 71;
             @media(max-width: $breakpoints-m-max) {
-                margin-right: $multiple * 65;
+                margin-right: $multiple * 30;
             }
             @media(max-width: $breakpoints-s-max) {
                 margin-right: $multiple * 20;

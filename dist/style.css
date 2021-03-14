@@ -97,7 +97,7 @@
       margin-right: 17.75rem; }
       @media (max-width: 767px) {
         .intro__footer_button {
-          margin-right: 16.25rem; } }
+          margin-right: 7.5rem; } }
       @media (max-width: 575px) {
         .intro__footer_button {
           margin-right: 5rem; } }
@@ -133,24 +133,14 @@
           width: 65%;
           flex-direction: column;
           margin-bottom: 2.5rem; } }
-      .about__content_carousel_bg {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 70%;
-        height: 16.25rem;
-        background-color: #eff0f2;
-        margin: 2.25rem auto 5rem auto; }
-        @media (max-width: 991px) {
-          .about__content_carousel_bg {
-            width: 100%;
-            height: 20rem; } }
-        @media (max-width: 575px) {
-          .about__content_carousel_bg {
-            height: 27.5rem; } }
+      @media (max-width: 575px) {
+        .about__content_carousel {
+          width: 85%; } }
       .about__content_carousel_frame {
-        width: 82%;
         overflow: hidden; }
+        @media (max-width: 767px) {
+          .about__content_carousel_frame {
+            width: 100%; } }
         .about__content_carousel_frame_track {
           display: flex;
           justify-content: flex-start;
@@ -161,29 +151,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-width: 275px; }
-            @media (max-width: 1199px) {
-              .about__content_carousel_frame_track_item {
-                min-width: 231px; } }
-            @media (max-width: 991px) {
-              .about__content_carousel_frame_track_item {
-                min-width: 247px; } }
-            @media (max-width: 767px) {
-              .about__content_carousel_frame_track_item {
-                min-width: 287px; } }
-            @media (max-width: 575px) {
-              .about__content_carousel_frame_track_item {
-                min-width: 252px; } }
-            .about__content_carousel_frame_track_item img {
-              width: 100%; }
-              @media (max-width: 575px) {
-                .about__content_carousel_frame_track_item img {
-                  width: 17.5rem;
-                  height: 30rem;
-                  object-fit: cover; } }
-        @media (max-width: 575px) {
-          .about__content_carousel_frame {
-            width: 72%; } }
+            margin-bottom: 1.75rem; }
+            .about__content_carousel_frame_track_item_photo {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 85%;
+              height: 23.75rem;
+              margin: 1.875rem 0;
+              background-color: #eff0f2; }
+              .about__content_carousel_frame_track_item_photo img {
+                width: 22.5rem;
+                height: 27.5rem;
+                object-fit: cover; }
+                @media (max-width: 991px) {
+                  .about__content_carousel_frame_track_item_photo img {
+                    width: 19.25rem;
+                    height: 25.75rem; } }
+                @media (max-width: 575px) {
+                  .about__content_carousel_frame_track_item_photo img {
+                    width: 19.25rem;
+                    height: 25rem; } }
+              @media (max-width: 1199px) {
+                .about__content_carousel_frame_track_item_photo {
+                  width: 100%; } }
       .about__content_carousel_dots {
         display: flex;
         justify-content: center;
@@ -527,12 +518,22 @@
       justify-content: space-between;
       align-items: flex-start;
       min-width: 1140px; }
+      @media (max-width: 1199px) {
+        .testimonials__carousel_track_item {
+          min-width: 960px; } }
+      @media (max-width: 991px) {
+        .testimonials__carousel_track_item {
+          min-width: 720px; } }
       @media (max-width: 767px) {
         .testimonials__carousel_track_item {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: center; } }
+          align-items: center;
+          min-width: 540px; } }
+      @media (max-width: 575px) {
+        .testimonials__carousel_track_item {
+          min-width: 288px; } }
       .testimonials__carousel_track_item_photo {
         display: flex;
         justify-content: center;
@@ -557,7 +558,6 @@
           object-fit: cover; }
       .testimonials__carousel_track_item_descr {
         width: 56%;
-        height: 22.5rem;
         background-color: #eaebed;
         border-radius: 3px;
         padding: 6.25rem 5rem 3.25rem 5.25rem;
@@ -565,10 +565,9 @@
         @media (max-width: 991px) {
           .testimonials__carousel_track_item_descr {
             width: 53%;
-            padding: 3.75rem 5rem 3.25rem 5.25rem; } }
+            padding: 3rem 3.75rem 3rem 3.75rem; } }
         @media (max-width: 767px) {
           .testimonials__carousel_track_item_descr {
-            height: auto;
             padding: 3rem 2rem 3.25rem 2rem; } }
         @media (max-width: 767px) {
           .testimonials__carousel_track_item_descr {

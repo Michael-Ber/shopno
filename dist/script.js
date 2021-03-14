@@ -99,12 +99,46 @@ const carousel = (parentSelector, trackSelector, itemSelector, dotsSelector, arr
   const slider = document.querySelector(parentSelector),
         track = slider.querySelector(trackSelector),
         items = slider.querySelectorAll(itemSelector),
-        dots = slider.querySelectorAll(dotsSelector),
-        itemWidth = +window.getComputedStyle(items[0]).width.slice(0, -2);
+        dots = slider.querySelectorAll(dotsSelector);
   let offset = 0,
       slideIndex = 0,
-      trackWidth = itemWidth * items.length;
-  track.style.width = trackWidth + 'px';
+      itemWidth,
+      trackWidth;
+
+  const init = () => {
+    items.forEach(item => {
+      item.style.minWidth = +window.getComputedStyle(slider).width.slice(0, -2) + 'px';
+    });
+    itemWidth = +window.getComputedStyle(items[0]).width.slice(0, -2);
+    trackWidth = itemWidth * items.length;
+    track.style.transform = `translateX(0px)`;
+    dots.forEach(dot => {
+      dot.classList.remove(activeClass);
+    });
+    dots[0].classList.add(activeClass);
+  };
+
+  init(); // console.log('here');
+  // const mediaQuery575 = window.matchMedia('(max-width: 575px)');
+  // const mediaQuery767 = window.matchMedia('(max-width: 767px)');
+  // const mediaQuery991 = window.matchMedia('(max-width: 991px)');
+  // const mediaQuery1199 = window.matchMedia('(max-width: 1199px)');
+  // function handleTabletChange(e) {
+  //     if(e.matches) {
+  //         items.forEach(item => {
+  //             item.style.minWidth = +window.getComputedStyle(slider).width.slice(0, -2) + 'px';
+  //         });
+  //         itemWidth = +window.getComputedStyle(items[0]).width.slice(0, -2);
+  //         trackWidth = itemWidth * items.length;
+  //         // track.style.width = trackWidth + 'px';
+  //     }
+  // }
+  // handleTabletChange(mediaQuery575);
+  // handleTabletChange(mediaQuery767);
+  // handleTabletChange(mediaQuery991);
+  // handleTabletChange(mediaQuery1199);
+  // console.log(itemWidth);
+
   dots.forEach((dot, i) => {
     dot.addEventListener('click', function () {
       dots.forEach(dot => {
@@ -270,7 +304,13 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_blocks_stars__WEBPACK_IMPORTED_MODULE_0__["default"])('.testimonials__carousel_track_item', '.testimonials__carousel_track_item_descr_stars_star', '.testimonials__carousel_track_item_descr_stars');
   Object(_blocks_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"])('.intro__header_hamburger', '.intro__header_menu', 'intro__header_menu_active');
   const aboutSlider = Object(_blocks_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])('.about__content_carousel', '.about__content_carousel_frame_track', '.about__content_carousel_frame_track_item', '.about__content_carousel_dots_dot', null, 'dot_active', false);
+  window.addEventListener('resize', () => {
+    Object(_blocks_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])('.about__content_carousel', '.about__content_carousel_frame_track', '.about__content_carousel_frame_track_item', '.about__content_carousel_dots_dot', null, 'dot_active', false);
+  });
   const testimonialsSlider = Object(_blocks_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])('.testimonials__carousel', '.testimonials__carousel_track', '.testimonials__carousel_track_item', '.testimonials__carousel_triggers_dots_dot', '.testimonials__carousel_triggers_arrows', 'dot_active', true);
+  window.addEventListener('resize', () => {
+    Object(_blocks_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])('.testimonials__carousel', '.testimonials__carousel_track', '.testimonials__carousel_track_item', '.testimonials__carousel_triggers_dots_dot', '.testimonials__carousel_triggers_arrows', 'dot_active', true);
+  });
   Object(_blocks_knowMore__WEBPACK_IMPORTED_MODULE_3__["default"])('.services__content_item', '.services__content_item_wrapper_backside', '.services__content_item_wrapper', '.services__content_item_wrapper_text_more', '.services__content_item_wrapper_backside_close');
 });
 

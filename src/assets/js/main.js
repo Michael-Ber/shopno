@@ -23,6 +23,17 @@ window.addEventListener('DOMContentLoaded', () => {
         'dot_active',
         false
     );
+    window.addEventListener('resize', () => {
+        carousel(
+            '.about__content_carousel',
+            '.about__content_carousel_frame_track',
+            '.about__content_carousel_frame_track_item',
+            '.about__content_carousel_dots_dot', 
+            null,
+            'dot_active',
+            false
+        );
+    });
     const testimonialsSlider = carousel(
         '.testimonials__carousel',
         '.testimonials__carousel_track',
@@ -32,6 +43,17 @@ window.addEventListener('DOMContentLoaded', () => {
         'dot_active',
         true
     );
+    window.addEventListener('resize', () => {
+        carousel(
+            '.testimonials__carousel',
+            '.testimonials__carousel_track',
+            '.testimonials__carousel_track_item',
+            '.testimonials__carousel_triggers_dots_dot',
+            '.testimonials__carousel_triggers_arrows',
+            'dot_active',
+            true
+        );
+    });
     knowMore(
         '.services__content_item',
         '.services__content_item_wrapper_backside',
