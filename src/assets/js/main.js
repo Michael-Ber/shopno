@@ -2,6 +2,7 @@ import stars from './blocks/stars';
 import hamburger from "./blocks/hamburger";
 import carousel from './blocks/carousel';
 import knowMore from './blocks/knowMore';
+import form from "./blocks/form";
 
 window.addEventListener('DOMContentLoaded', () => {
     stars(
@@ -60,5 +61,8 @@ window.addEventListener('DOMContentLoaded', () => {
         '.services__content_item_wrapper',
         '.services__content_item_wrapper_text_more',
         '.services__content_item_wrapper_backside_close'
+    );
+    form(
+        '.contacts__data_form'
     );
 });

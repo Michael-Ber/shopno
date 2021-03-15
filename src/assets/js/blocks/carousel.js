@@ -22,29 +22,6 @@ const carousel = (parentSelector, trackSelector, itemSelector, dotsSelector, arr
         dots[0].classList.add(activeClass);
     };
     init();
-    // console.log('here');
-    // const mediaQuery575 = window.matchMedia('(max-width: 575px)');
-    // const mediaQuery767 = window.matchMedia('(max-width: 767px)');
-    // const mediaQuery991 = window.matchMedia('(max-width: 991px)');
-    // const mediaQuery1199 = window.matchMedia('(max-width: 1199px)');
-
-    // function handleTabletChange(e) {
-    //     if(e.matches) {
-    //         items.forEach(item => {
-    //             item.style.minWidth = +window.getComputedStyle(slider).width.slice(0, -2) + 'px';
-    //         });
-    //         itemWidth = +window.getComputedStyle(items[0]).width.slice(0, -2);
-    //         trackWidth = itemWidth * items.length;
-    //         // track.style.width = trackWidth + 'px';
-    //     }
-    // }
-
-    // handleTabletChange(mediaQuery575);
-    // handleTabletChange(mediaQuery767);
-    // handleTabletChange(mediaQuery991);
-    // handleTabletChange(mediaQuery1199);
-
-    // console.log(itemWidth);
     dots.forEach((dot, i) => {
         dot.addEventListener('click', function () {
             dots.forEach(dot => {

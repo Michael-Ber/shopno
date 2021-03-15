@@ -118,27 +118,7 @@ const carousel = (parentSelector, trackSelector, itemSelector, dotsSelector, arr
     dots[0].classList.add(activeClass);
   };
 
-  init(); // console.log('here');
-  // const mediaQuery575 = window.matchMedia('(max-width: 575px)');
-  // const mediaQuery767 = window.matchMedia('(max-width: 767px)');
-  // const mediaQuery991 = window.matchMedia('(max-width: 991px)');
-  // const mediaQuery1199 = window.matchMedia('(max-width: 1199px)');
-  // function handleTabletChange(e) {
-  //     if(e.matches) {
-  //         items.forEach(item => {
-  //             item.style.minWidth = +window.getComputedStyle(slider).width.slice(0, -2) + 'px';
-  //         });
-  //         itemWidth = +window.getComputedStyle(items[0]).width.slice(0, -2);
-  //         trackWidth = itemWidth * items.length;
-  //         // track.style.width = trackWidth + 'px';
-  //     }
-  // }
-  // handleTabletChange(mediaQuery575);
-  // handleTabletChange(mediaQuery767);
-  // handleTabletChange(mediaQuery991);
-  // handleTabletChange(mediaQuery1199);
-  // console.log(itemWidth);
-
+  init();
   dots.forEach((dot, i) => {
     dot.addEventListener('click', function () {
       dots.forEach(dot => {
@@ -188,6 +168,107 @@ const carousel = (parentSelector, trackSelector, itemSelector, dotsSelector, arr
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (carousel);
+
+/***/ }),
+
+/***/ "./src/assets/js/blocks/form.js":
+/*!**************************************!*\
+  !*** ./src/assets/js/blocks/form.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const form = formSelector => {
+  const forms = document.querySelectorAll(formSelector);
+  forms.forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let messages = {
+        success: 'Спасибо, скоро мы с вами свяжемся',
+        loading: 'Идет загрузка',
+        failure: 'Что-то пошло не так'
+      };
+
+      const sendingData = async (url, data) => {
+        let res = await fetch(url, {
+          method: 'POST',
+          body: data
+        });
+        return await res.text();
+      };
+
+      let dialogBG = document.createElement('div');
+      dialogBG.classList.add('popup__dialog-bg');
+      dialogBG.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, .5);
+                z-index: 100;
+            `;
+      let dialog = document.createElement('div');
+      dialog.classList.add('popup_dialog-bg_modal');
+      dialog.style.cssText = `
+                width: 500px;
+                height: 310px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #fff;
+                padding: 40px;
+            `;
+      let dialogText = document.createElement('span');
+      dialogText.style.cssText = `
+                display: block;
+                font-size: 25px;
+                color: blue;
+                padding-top: 55px;
+            `;
+      dialogText.textContent = messages.loading;
+      let closeDialog = document.createElement('i');
+      closeDialog.setAttribute('data-close', '');
+      closeDialog.innerHTML = '&times;';
+      closeDialog.style.cssText = `
+                text-align: end;
+                font-size: 40px;
+            `;
+      dialog.appendChild(closeDialog);
+      dialog.appendChild(dialogText);
+      dialogBG.appendChild(dialog);
+      let body = document.querySelector('body');
+      body.appendChild(dialogBG);
+      body.style.overflow = 'hidden';
+      let formdata = new FormData(form);
+      sendingData('./assets/server.php', formdata).then(res => console.log(res)).then(() => dialogText.textContent = messages.success).then(() => {
+        dialogBG.addEventListener('click', e => {
+          if (e.target.classList.contains('popup__dialog-bg')) {
+            closeDialogBox();
+          }
+        });
+        closeDialog.addEventListener('click', e => {
+          closeDialogBox();
+        });
+      }).catch(() => dialogText.textContent = messages.failure).finally(() => {
+        form.reset();
+        let timerID = setTimeout(() => {
+          closeDialogBox();
+        }, 4000);
+      });
+
+      function closeDialogBox() {
+        dialogBG.remove();
+        body.style.overflow = 'visible';
+      }
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (form);
 
 /***/ }),
 
@@ -296,6 +377,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_hamburger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/hamburger */ "./src/assets/js/blocks/hamburger.js");
 /* harmony import */ var _blocks_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/carousel */ "./src/assets/js/blocks/carousel.js");
 /* harmony import */ var _blocks_knowMore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/knowMore */ "./src/assets/js/blocks/knowMore.js");
+/* harmony import */ var _blocks_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/form */ "./src/assets/js/blocks/form.js");
+
 
 
 
@@ -312,6 +395,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_blocks_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])('.testimonials__carousel', '.testimonials__carousel_track', '.testimonials__carousel_track_item', '.testimonials__carousel_triggers_dots_dot', '.testimonials__carousel_triggers_arrows', 'dot_active', true);
   });
   Object(_blocks_knowMore__WEBPACK_IMPORTED_MODULE_3__["default"])('.services__content_item', '.services__content_item_wrapper_backside', '.services__content_item_wrapper', '.services__content_item_wrapper_text_more', '.services__content_item_wrapper_backside_close');
+  Object(_blocks_form__WEBPACK_IMPORTED_MODULE_4__["default"])('.contacts__data_form');
 });
 
 /***/ })
