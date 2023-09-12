@@ -29,7 +29,7 @@ gulp.task("build-sass", () => {
 gulp.task("build-js", () => {
     return gulp.src("./src/assets/js/main.js")
                 .pipe(webpack({
-                    mode: 'development',
+                    mode: 'production',
                     output: {
                         filename: 'script.js'
                     },
