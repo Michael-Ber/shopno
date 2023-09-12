@@ -51,8 +51,8 @@ h3 {
     @include montserrat();
     display: inline-block;
     padding: $multiple * 5 $multiple * 12;
-    border: $multiple/2 solid $secondary-color-op50;
-    border-radius: $multiple/2;
+    border: calc($multiple / 2) solid $secondary-color-op50;
+    border-radius: calc($multiple / 2);
     font-size: $fs-l;
     font-weight: 700;
     text-transform: uppercase;

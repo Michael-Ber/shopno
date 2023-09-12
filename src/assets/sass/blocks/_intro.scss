@@ -37,7 +37,7 @@
                 width: $multiple * 8;
                 height: $multiple;
                 background-color: $secondary-color-op60;
-                border-radius: $multiple / 2;
+                border-radius: calc($multiple / 2);
                 transition: .2s all;
                 &:not(:last-child) {
                     margin-bottom: $multiple;

@@ -1,10 +1,10 @@
 // == FUNCTION == //
 
 @function strip-unit($num) {
-    @return $num / ($num * 0 + 1); // equal to $num / 1px => remove px
+    @return calc($num / ($num * 0 + 1px)); // equal to $num / 1px => remove px
 }
 @function rem($num) {
-    @return (strip-unit($num) / 16) * 1rem; // 16 - it is a standart value of font-size in html
+    @return calc((strip-unit($num) / 16) * 1rem); // 16 - it is a standart value of font-size in html
 }
 // == /FUNCTION == //
 
