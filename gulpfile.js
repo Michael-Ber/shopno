@@ -97,7 +97,7 @@ gulp.task("prod", () => {
 
     return gulp.src("./src/assets/js/main.js")
                 .pipe(webpack({
-                    mode: 'production',
+                    mode: 'development',
                     output: {
                         filename: 'script.js'
                     },
